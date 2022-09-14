@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -19,22 +20,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_begin="30dp" />
+                app:layout_constraintGuide_begin="20dp" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/gl_end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_end="30dp" />
+                app:layout_constraintGuide_end="20dp" />
 
             <TextView
                 android:id="@+id/tv_heading"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                style="@style/HeadingStyle"
                 android:layout_marginTop="20dp"
-                android:text="Calculate HRA tax exemption"
-                android:textColor="@color/textColor"
+                android:text="@string/calculate_hra_tax_exemption"
                 android:textSize="30sp"
                 app:layout_constraintEnd_toStartOf="@+id/gl_end"
                 app:layout_constraintStart_toStartOf="@+id/gl_start"
@@ -46,7 +45,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:hint="Basic Salary (Yearly)"
+                android:hint="@string/basic_salary_yearly"
                 app:endIconMode="clear_text"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
                 app:layout_constraintStart_toStartOf="@id/gl_start"
@@ -54,10 +53,9 @@
                 app:startIconDrawable="@drawable/ic_currency_rupee">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/TextInputEditTextStyle"
                     android:inputType="number"
-                    android:maxLines="1" />
+                    android:maxLength="8" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -67,7 +65,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:hint="HRA received"
+                android:hint="@string/hra_received"
                 app:endIconMode="clear_text"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
                 app:layout_constraintStart_toStartOf="@id/gl_start"
@@ -75,10 +73,9 @@
                 app:startIconDrawable="@drawable/ic_currency_rupee">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/TextInputEditTextStyle"
                     android:inputType="number"
-                    android:maxLines="1" />
+                    android:maxLength="8" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -88,7 +85,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:hint="Total rent paid (Yearly) "
+                android:hint="@string/total_rent_paid_yearly"
                 app:endIconMode="clear_text"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
                 app:layout_constraintStart_toStartOf="@id/gl_start"
@@ -96,10 +93,9 @@
                 app:startIconDrawable="@drawable/ic_currency_rupee">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/TextInputEditTextStyle"
                     android:inputType="number"
-                    android:maxLines="1" />
+                    android:maxLength="8" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -109,7 +105,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:hint="Dearness allowance (optional)"
+                android:hint="@string/dearness_allowance_optional"
                 app:endIconMode="clear_text"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
                 app:layout_constraintStart_toStartOf="@id/gl_start"
@@ -117,11 +113,10 @@
                 app:startIconDrawable="@drawable/ic_currency_rupee">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/TextInputEditTextStyle"
                     android:inputType="number"
-                    android:maxLines="1"
-                    android:text="0" />
+                    android:maxLength="8"
+                    android:text="@string/_0" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -131,25 +126,23 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:hint="My house is in a"
+                android:hint="@string/my_house_is_in_a"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
                 app:layout_constraintStart_toStartOf="@id/gl_start"
                 app:layout_constraintTop_toBottomOf="@id/et_dearness_allowance">
 
                 <AutoCompleteTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="none" />
+                    style="@style/TextInputEditTextStyle"
+                    android:inputType="none"
+                    tools:ignore="LabelFor" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_calculate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/SubmitButtonStyle"
                 android:layout_marginTop="20dp"
                 android:text="@string/calculate"
-                android:textAllCaps="false"
                 app:layout_constraintEnd_toStartOf="@+id/gl_end"
                 app:layout_constraintStart_toStartOf="@+id/gl_start"
                 app:layout_constraintTop_toBottomOf="@+id/et_city_type" />
@@ -168,7 +161,10 @@
                     android:id="@+id/tv_hra_taxable_heading"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="HRA taxable"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/hra_taxable"
+                    android:textColor="@color/textColor"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -177,7 +173,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="HRA exempted"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/hra_exempted"
+                    android:textColor="@color/textColor"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_hra_taxable_heading" />
 
@@ -185,6 +184,9 @@
                     android:id="@+id/tv_hra_taxable_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:textColor="@color/textColor"
+                    android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -193,6 +195,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:textColor="@color/textColor"
+                    android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_hra_taxable_value" />
 

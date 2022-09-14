@@ -1,208 +1,246 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/gl_start"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_begin="20dp" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/gl_end"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_end="20dp" />
-
-            <TextView
-                android:id="@+id/tv_theme"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:fontFamily="@font/roboto_medium"
-                android:text="App Theme"
-                android:textColor="@color/textColor"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@id/gl_start"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <RadioGroup
-                android:id="@+id/rg_theme"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:checkedButton="@+id/radio_button_auto"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="@id/gl_end"
-                app:layout_constraintStart_toStartOf="@id/gl_start"
-                app:layout_constraintTop_toBottomOf="@id/tv_theme">
-
-                <RadioButton
-                    android:id="@+id/radio_button_auto"
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_start"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Auto"
-                    android:textColor="@color/textColor" />
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="20dp" />
 
-                <RadioButton
-                    android:id="@+id/radio_button_dark"
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_end"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:text="Dark"
-                    android:textColor="@color/textColor" />
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="20dp" />
 
-                <RadioButton
-                    android:id="@+id/radio_button_light"
+                <TextView
+                    android:id="@+id/tv_theme"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:text="Light"
-                    android:textColor="@color/textColor" />
-            </RadioGroup>
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/app_theme"
+                    android:textColor="@color/textColor"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/gl_start"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/iv_rate_us"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:layout_constraintStart_toStartOf="@id/gl_start"
-                app:layout_constraintTop_toBottomOf="@id/rg_theme"
-                app:srcCompat="@drawable/ic_star_rate" />
+                <RadioGroup
+                    android:id="@+id/rg_theme"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:checkedButton="@+id/radio_button_auto"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="@id/gl_end"
+                    app:layout_constraintStart_toStartOf="@id/gl_start"
+                    app:layout_constraintTop_toBottomOf="@id/tv_theme">
 
-            <TextView
-                android:id="@+id/tv_rate_us"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:fontFamily="@font/roboto_medium"
-                android:text="Rate FinancialBuddy"
-                android:textColor="@color/textColor"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="@+id/iv_rate_us"
-                app:layout_constraintStart_toEndOf="@+id/iv_rate_us"
-                app:layout_constraintTop_toTopOf="@+id/iv_rate_us" />
+                    <RadioButton
+                        android:id="@+id/radio_button_dark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/highlightColor"
+                        android:text="@string/dark"
+                        android:textColor="@color/textColor" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/iv_share_app"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                app:layout_constraintStart_toStartOf="@id/gl_start"
-                app:layout_constraintTop_toBottomOf="@id/iv_rate_us"
-                app:srcCompat="@drawable/ic_share" />
+                    <RadioButton
+                        android:id="@+id/radio_button_light"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:buttonTint="@color/highlightColor"
+                        android:text="@string/light"
+                        android:textColor="@color/textColor" />
+                </RadioGroup>
 
-            <TextView
-                android:id="@+id/tv_share_app"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:fontFamily="@font/roboto_medium"
-                android:text="Share FinancialBuddy"
-                android:textColor="@color/textColor"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="@+id/iv_share_app"
-                app:layout_constraintStart_toEndOf="@+id/iv_share_app"
-                app:layout_constraintTop_toTopOf="@+id/iv_share_app" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_rate_us"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="@id/gl_start"
+                    app:layout_constraintTop_toBottomOf="@id/rg_theme"
+                    app:srcCompat="@drawable/ic_star_rate" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/iv_privacy_policy"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                app:layout_constraintStart_toStartOf="@id/gl_start"
-                app:layout_constraintTop_toBottomOf="@id/iv_share_app"
-                app:srcCompat="@drawable/ic_more" />
+                <TextView
+                    android:id="@+id/tv_rate_us"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/rate_financialbuddy"
+                    android:textColor="@color/textColor"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_rate_us"
+                    app:layout_constraintStart_toEndOf="@+id/iv_rate_us"
+                    app:layout_constraintTop_toTopOf="@+id/iv_rate_us" />
 
-            <TextView
-                android:id="@+id/tv_privacy_policy"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:fontFamily="@font/roboto_medium"
-                android:text="Privacy Policy"
-                android:textColor="@color/textColor"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="@+id/iv_privacy_policy"
-                app:layout_constraintStart_toEndOf="@+id/iv_privacy_policy"
-                app:layout_constraintTop_toTopOf="@+id/iv_privacy_policy" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_share_app"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    app:layout_constraintStart_toStartOf="@id/gl_start"
+                    app:layout_constraintTop_toBottomOf="@id/iv_rate_us"
+                    app:srcCompat="@drawable/ic_share" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/iv_terms"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                app:layout_constraintStart_toStartOf="@id/gl_start"
-                app:layout_constraintTop_toBottomOf="@id/iv_privacy_policy"
-                app:srcCompat="@drawable/ic_more" />
+                <TextView
+                    android:id="@+id/tv_share_app"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/share_financialbuddy"
+                    android:textColor="@color/textColor"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_share_app"
+                    app:layout_constraintStart_toEndOf="@+id/iv_share_app"
+                    app:layout_constraintTop_toTopOf="@+id/iv_share_app" />
 
-            <TextView
-                android:id="@+id/tv_terms"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:fontFamily="@font/roboto_medium"
-                android:text="Terms and Conditions"
-                android:textColor="@color/textColor"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="@+id/iv_terms"
-                app:layout_constraintStart_toEndOf="@+id/iv_terms"
-                app:layout_constraintTop_toTopOf="@+id/iv_terms" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_privacy_policy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    app:layout_constraintStart_toStartOf="@id/gl_start"
+                    app:layout_constraintTop_toBottomOf="@id/iv_share_app"
+                    app:srcCompat="@drawable/ic_more" />
 
-            <TextView
-                android:id="@+id/tv_more_apps"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:fontFamily="@font/roboto_medium"
-                android:text="More Apps"
-                android:textColor="@color/textColor"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="@id/gl_start"
-                app:layout_constraintTop_toBottomOf="@id/iv_terms" />
+                <TextView
+                    android:id="@+id/tv_privacy_policy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/privacy_policy"
+                    android:textColor="@color/textColor"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_privacy_policy"
+                    app:layout_constraintStart_toEndOf="@+id/iv_privacy_policy"
+                    app:layout_constraintTop_toTopOf="@+id/iv_privacy_policy" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/iv_home_app_logo"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginTop="100dp"
-                android:src="@drawable/app_logo_circle"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/textView2"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_more_apps" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_terms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    app:layout_constraintStart_toStartOf="@id/gl_start"
+                    app:layout_constraintTop_toBottomOf="@id/iv_privacy_policy"
+                    app:srcCompat="@drawable/ic_more" />
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="@string/financialbuddy"
-                android:textColor="@color/textColor"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/iv_home_app_logo"
-                app:layout_constraintEnd_toEndOf="@id/gl_end"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/iv_home_app_logo"
-                app:layout_constraintTop_toTopOf="@+id/iv_home_app_logo" />
+                <TextView
+                    android:id="@+id/tv_terms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/terms_and_conditions"
+                    android:textColor="@color/textColor"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_terms"
+                    app:layout_constraintStart_toEndOf="@+id/iv_terms"
+                    app:layout_constraintTop_toTopOf="@+id/iv_terms" />
+
+                <TextView
+                    android:id="@+id/tv_more_apps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/more_apps"
+                    android:textColor="@color/textColor"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/gl_start"
+                    app:layout_constraintTop_toBottomOf="@id/iv_terms" />
+
+                <ImageView
+                    android:id="@+id/appCompatImageView"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/cam_master_logo"
+                    app:layout_constraintStart_toStartOf="@id/gl_start"
+                    app:layout_constraintTop_toBottomOf="@id/tv_more_apps" />
+
+                <TextView
+                    android:id="@+id/tv_cam_master"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/cammaster"
+                    android:textColor="@color/textColor"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView"
+                    app:layout_constraintStart_toEndOf="@+id/appCompatImageView"
+                    app:layout_constraintTop_toTopOf="@+id/appCompatImageView" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_home_app_logo"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginBottom="90dp"
+            android:src="@drawable/app_logo_circle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView2"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/financialbuddy"
+            android:textColor="@color/textColor"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_home_app_logo"
+            app:layout_constraintEnd_toStartOf="@+id/tv_app_version"
+            app:layout_constraintStart_toEndOf="@+id/iv_home_app_logo"
+            app:layout_constraintTop_toTopOf="@+id/iv_home_app_logo" />
+
+        <TextView
+            android:id="@+id/tv_app_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/roboto_light"
+            android:textColor="@color/textColor"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="@+id/textView2"
+            tools:text="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

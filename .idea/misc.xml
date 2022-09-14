@@ -5,21 +5,26 @@
       <map>
         <entry key="../../../layout/custom_preview.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-night/drawable.xml" value="0.136" />
+        <entry key="app/src/main/res/drawable-night/ic_more.xml" value="0.136" />
+        <entry key="app/src/main/res/drawable-night/ic_more_vert.xml" value="0.136" />
         <entry key="app/src/main/res/drawable-night/ic_share.xml" value="0.136" />
         <entry key="app/src/main/res/drawable-night/ic_star_rate.xml" value="0.136" />
+        <entry key="app/src/main/res/drawable/ic_arrow_down.xml" value="0.136" />
+        <entry key="app/src/main/res/drawable/ic_arrow_up.xml" value="0.136" />
         <entry key="app/src/main/res/drawable/ic_more.xml" value="0.136" />
         <entry key="app/src/main/res/drawable/ic_more_vert.xml" value="0.136" />
+        <entry key="app/src/main/res/drawable/ic_receipt.xml" value="0.136" />
         <entry key="app/src/main/res/drawable/ic_share.xml" value="0.136" />
         <entry key="app/src/main/res/drawable/ic_star_rate.xml" value="0.136" />
         <entry key="app/src/main/res/drawable/shape_rect_bg.xml" value="0.189" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.18" />
-        <entry key="app/src/main/res/layout/fragment_calculator.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_calculator.xml" value="0.14" />
         <entry key="app/src/main/res/layout/fragment_generate_rent_receipt.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_hra.xml" value="0.1838768115942029" />
         <entry key="app/src/main/res/layout/fragment_investment.xml" value="0.1838768115942029" />
-        <entry key="app/src/main/res/layout/fragment_more.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_more.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_pdf_view.xml" value="0.1838768115942029" />
         <entry key="app/src/main/res/layout/fragment_rent_receipt_list.xml" value="0.1838768115942029" />
         <entry key="app/src/main/res/layout/fragment_see_all.xml" value="0.1838768115942029" />

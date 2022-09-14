@@ -11,7 +11,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="transparent">#00FFFFFF</color>
 
-    <color name="highlightColor">#4275FF</color>
+    <color name="highlightColor">#1D5AFF</color>
     <color name="appBackgroundColor">#0C0C0C</color>
     <color name="textColor">#FFFFFF</color>
     <color name="bottomNavBackgroundColor">#040404</color>

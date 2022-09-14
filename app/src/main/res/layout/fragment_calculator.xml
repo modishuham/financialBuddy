@@ -20,14 +20,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_begin="30dp" />
+                app:layout_constraintGuide_begin="20dp" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/gl_end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_end="30dp" />
+                app:layout_constraintGuide_end="20dp" />
 
             <TextView
                 android:id="@+id/tv_heading"
@@ -53,10 +53,9 @@
                 app:startIconDrawable="@drawable/ic_currency_rupee">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/TextInputEditTextStyle"
                     android:inputType="number"
-                    android:maxLines="1" />
+                    android:maxLength="8" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -75,11 +74,9 @@
                 app:layout_constraintTop_toBottomOf="@+id/et_amount">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/TextInputEditTextStyle"
                     android:inputType="numberDecimal"
-                    android:maxLength="5"
-                    android:maxLines="1" />
+                    android:maxLength="5" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -88,7 +85,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_medium"
                 android:text="@string/time_period"
+                android:textColor="@color/textColor"
                 app:layout_constraintStart_toStartOf="@+id/gl_start"
                 app:layout_constraintTop_toBottomOf="@id/et_return_rate" />
 
@@ -97,6 +96,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/textColor"
                 app:layout_constraintEnd_toStartOf="@+id/gl_end"
                 app:layout_constraintTop_toBottomOf="@+id/et_return_rate"
                 tools:text="12%" />
@@ -121,28 +122,24 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:hint="Compounding Period"
+                android:hint="@string/compounding_period"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
                 app:layout_constraintStart_toStartOf="@id/gl_start"
                 app:layout_constraintTop_toBottomOf="@id/slider_duration">
 
                 <AutoCompleteTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="none" />
+                    style="@style/TextInputEditTextStyle"
+                    android:inputType="none"
+                    tools:ignore="LabelFor" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_calculate"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
+                style="@style/SubmitButtonStyle"
                 android:layout_marginTop="20dp"
-                android:fontFamily="@font/roboto_bold"
                 android:text="@string/calculate"
-                android:textAllCaps="false"
-                android:textColor="@color/textColor"
                 app:layout_constraintEnd_toStartOf="@+id/gl_end"
                 app:layout_constraintStart_toStartOf="@+id/gl_start"
                 app:layout_constraintTop_toBottomOf="@+id/et_compound_period" />
@@ -161,7 +158,10 @@
                     android:id="@+id/heading_investment_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Invested Amount"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/invested_amount"
+                    android:textColor="@color/textColor"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -170,7 +170,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Est. returns"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/est_returns"
+                    android:textColor="@color/textColor"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/heading_investment_amount" />
 
@@ -179,14 +182,33 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Total value"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/total_value"
+                    android:textColor="@color/textColor"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/heading_est_return" />
+
+                <TextView
+                    android:id="@+id/heading_monthly_EMI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/monthly_emi"
+                    android:textColor="@color/textColor"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/heading_total_value" />
 
                 <TextView
                     android:id="@+id/tv_invested_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:textColor="@color/textColor"
+                    android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="1000" />
@@ -196,6 +218,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:textColor="@color/textColor"
+                    android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_invested_amount"
                     tools:text="1000" />
@@ -205,17 +230,34 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:textColor="@color/textColor"
+                    android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_est_returns"
+                    tools:text="1000" />
+
+                <TextView
+                    android:id="@+id/tv_monthly_emi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:textColor="@color/textColor"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_total_value"
                     tools:text="1000" />
 
                 <com.github.mikephil.charting.charts.PieChart
                     android:id="@+id/chart"
                     android:layout_width="0dp"
                     android:layout_height="500dp"
+                    android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_total_value" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_monthly_emi" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

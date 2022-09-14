@@ -131,8 +131,8 @@ class HraFragment : BaseFragment() {
 
         //initializing colors for the entries
         val colors: ArrayList<Int> = ArrayList()
-        colors.add(Color.parseColor("#304567"))
-        colors.add(Color.parseColor("#309967"))
+        colors.add(Color.parseColor("#48AC42"))
+        colors.add(Color.parseColor("#FF0970B5"))
 
         //input data and fit data into pie chart entry
         for (type in typeAmountMap.keys) {

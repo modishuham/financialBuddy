@@ -35,18 +35,30 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/roboto_bold"
-                android:text="My Rent Receipts -"
+                android:text="@string/my_rent_receipts"
                 android:textColor="@color/textColor"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
                 app:layout_constraintStart_toStartOf="@id/gl_start"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lav_no_data"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/gl_end"
+                app:layout_constraintStart_toStartOf="@id/gl_start"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="false"
+                app:lottie_rawRes="@raw/no_data_animation" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_rent_receipt"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                tools:listitem="@layout/item_rent_receipt"
                 android:layout_marginTop="10dp"
                 android:clipToPadding="false"
                 android:paddingBottom="100dp"
@@ -54,7 +66,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
                 app:layout_constraintStart_toStartOf="@id/gl_start"
-                app:layout_constraintTop_toBottomOf="@id/tv_heading" />
+                app:layout_constraintTop_toBottomOf="@id/tv_heading"
+                tools:listitem="@layout/item_rent_receipt" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -62,11 +75,16 @@
             android:id="@+id/btn_generate_rent_receipt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right"
+            android:layout_gravity="right|bottom"
             android:layout_margin="16dp"
-            android:text="Generate New Receipt"
+            android:backgroundTint="@color/highlightColor"
+            android:fontFamily="@font/roboto_medium"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="@string/generate_new_receipt"
             android:textAllCaps="false"
-            app:icon="@drawable/ic_more" />
+            android:textColor="@color/white"
+            android:textSize="14sp" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

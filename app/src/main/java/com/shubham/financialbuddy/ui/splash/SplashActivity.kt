@@ -1,18 +1,14 @@
 package com.shubham.financialbuddy.ui.splash
 
-import android.animation.ValueAnimator
 import androidx.appcompat.app.AppCompatActivity
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.animation.AnimationUtils
-import android.widget.Toast
 import com.shubham.financialbuddy.R
 import com.shubham.financialbuddy.databinding.ActivitySplashBinding
 import com.shubham.financialbuddy.ui.MainActivity
-import com.shubham.financialbuddy.utils.Utils
 
 class SplashActivity : AppCompatActivity() {
 
@@ -27,19 +23,19 @@ class SplashActivity : AppCompatActivity() {
         handler = Handler(Looper.getMainLooper())
 
         animationHandler = Handler(Looper.getMainLooper())
-        /*animationHandler.postDelayed({
+        animationHandler.postDelayed({
             val scaleUpAnim = AnimationUtils.loadAnimation(this, R.anim.anim_scale_up)
             scaleUpAnim.fillAfter = true
             scaleUpAnim.duration = 1000L
             binding.appLogo.startAnimation(scaleUpAnim)
             binding.h1.animate().alpha(1F).duration = 1000L
             binding.h2.animate().alpha(1F).duration = 1000L
-        }, 1000L)*/
+        }, 1000L)
 
         handler.postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
             finish()
-        }, 1000L)
+        }, 3000L)
     }
 
     override fun onDestroy() {

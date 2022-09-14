@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/roboto_bold"
-                android:text="To Generate New Rent Receipt Please Fill Below Information -"
+                android:text="@string/to_generate_new_rent_receipt_please_fill_below_information"
                 android:textColor="@color/textColor"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
@@ -47,19 +47,16 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:hint="My full name is"
+                android:hint="@string/my_full_name_is"
                 app:endIconMode="clear_text"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
                 app:layout_constraintStart_toStartOf="@id/gl_start"
                 app:layout_constraintTop_toBottomOf="@id/tv_heading">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
+                    style="@style/TextInputEditTextStyle"
                     android:inputType="text"
-                    android:maxLength="30"
-                    android:maxLines="1" />
+                    android:maxLength="30" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -69,19 +66,16 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:hint="My monthly rent is"
+                android:hint="@string/my_monthly_rent_is"
                 app:endIconMode="clear_text"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
                 app:layout_constraintStart_toStartOf="@id/gl_start"
                 app:layout_constraintTop_toBottomOf="@id/et_name">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
+                    style="@style/TextInputEditTextStyle"
                     android:inputType="number"
-                    android:maxLength="7"
-                    android:maxLines="1" />
+                    android:maxLength="7" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -91,19 +85,16 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:hint="My PAN (Optional)"
+                android:hint="@string/my_pan_optional"
                 app:endIconMode="clear_text"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
                 app:layout_constraintStart_toStartOf="@id/gl_start"
                 app:layout_constraintTop_toBottomOf="@id/et_monthly_rent">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
+                    style="@style/TextInputEditTextStyle"
                     android:inputType="text"
-                    android:maxLength="10"
-                    android:maxLines="1" />
+                    android:maxLength="10" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -113,19 +104,16 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:hint="House owner's name is"
+                android:hint="@string/house_owner_s_name_is"
                 app:endIconMode="clear_text"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
                 app:layout_constraintStart_toStartOf="@id/gl_start"
                 app:layout_constraintTop_toBottomOf="@id/et_my_pan">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
+                    style="@style/TextInputEditTextStyle"
                     android:inputType="text"
-                    android:maxLength="30"
-                    android:maxLines="1" />
+                    android:maxLength="30" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -135,19 +123,16 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:hint="House owner's PAN (Optional)"
+                android:hint="@string/house_owner_s_pan_optional"
                 app:endIconMode="clear_text"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
                 app:layout_constraintStart_toStartOf="@id/gl_start"
                 app:layout_constraintTop_toBottomOf="@id/et_landlord_name">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
+                    style="@style/TextInputEditTextStyle"
                     android:inputType="text"
-                    android:maxLength="10"
-                    android:maxLines="1" />
+                    android:maxLength="10" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -157,16 +142,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:hint="Address of rented house is"
+                android:hint="@string/address_of_rented_house_is"
                 app:endIconMode="clear_text"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
                 app:layout_constraintStart_toStartOf="@id/gl_start"
                 app:layout_constraintTop_toBottomOf="@id/et_landlord_pan">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto"
+                    style="@style/TextInputEditTextStyle"
                     android:inputType="text"
                     android:maxLength="100" />
 
@@ -178,20 +161,17 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:hint="Rent receipt start date is"
+                android:hint="@string/rent_receipt_start_date_is"
                 app:endIconMode="clear_text"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
                 app:layout_constraintStart_toStartOf="@id/gl_start"
                 app:layout_constraintTop_toBottomOf="@id/et_address">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/TextInputEditTextStyle"
                     android:focusable="false"
-                    android:fontFamily="@font/roboto"
                     android:inputType="text"
                     android:maxLength="100"
-                    android:maxLines="1"
                     android:textIsSelectable="false" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -203,20 +183,17 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:hint="Rent receipt end date is"
+                android:hint="@string/rent_receipt_end_date_is"
                 app:endIconMode="clear_text"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
                 app:layout_constraintStart_toStartOf="@id/gl_start"
                 app:layout_constraintTop_toBottomOf="@id/et_start_date">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    style="@style/TextInputEditTextStyle"
                     android:focusable="false"
-                    android:fontFamily="@font/roboto"
                     android:inputType="text"
                     android:maxLength="100"
-                    android:maxLines="1"
                     android:textIsSelectable="false" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -236,24 +213,28 @@
                     android:id="@+id/radio_button_monthly"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Monthly" />
+                    android:buttonTint="@color/highlightColor"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/monthly"
+                    android:textColor="@color/textColor" />
 
                 <RadioButton
                     android:id="@+id/radio_button_quarterly"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Quarterly" />
+                    android:buttonTint="@color/highlightColor"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/quarterly"
+                    android:textColor="@color/textColor" />
             </RadioGroup>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_generate"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
+                style="@style/SubmitButtonStyle"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="100dp"
-                android:text="Generate Receipt"
-                android:textAllCaps="false"
+                android:text="@string/generate_receipt"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/gl_end"
                 app:layout_constraintStart_toStartOf="@id/gl_start"

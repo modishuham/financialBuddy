@@ -4,26 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="70dp"
-    android:layout_marginTop="4dp">
+    android:layout_marginTop="5dp">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cardBackgroundColor="@color/blue_200"
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/card_bg"
             android:orientation="horizontal"
             android:weightSum="1.0">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_weight="0.1"
+                android:layout_weight="0.2"
                 android:src="@drawable/ic_receipt" />
 
             <TextView
@@ -31,15 +31,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_weight="0.8"
+                android:layout_weight="0.7"
                 android:ellipsize="end"
-                android:fontFamily="@font/roboto_medium"
+                android:fontFamily="@font/roboto_light"
                 android:maxLines="1"
-                android:textColor="@color/textColor"
+                android:textColor="@color/white"
                 android:textSize="14sp"
                 tools:text="Test Receipt" />
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_more"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

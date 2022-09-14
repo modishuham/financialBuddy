@@ -75,6 +75,7 @@ class CalculatorFragment : BaseFragment() {
                 mBinding.etAmount.hint = "Yearly Investment"
                 mBinding.sliderDuration.value = 15.0F
                 mBinding.sliderDuration.valueFrom = 15.0F
+                mBinding.sliderDuration.stepSize = 5.0F
                 mBinding.tvTimePeriod.text = "15 year"
                 mBinding.etReturnRate.editText?.setText("7.1")
                 mBinding.etReturnRate.isEnabled = false
@@ -89,21 +90,41 @@ class CalculatorFragment : BaseFragment() {
             CalculatorType.PERSONAL_LOAN.name -> {
                 mBinding.tvHeading.text = "Home Loan Calculator"
                 mBinding.etAmount.hint = "Loan Amount"
+                mBinding.headingMonthlyEMI.visibility = View.VISIBLE
+                mBinding.tvMonthlyEmi.visibility = View.VISIBLE
+                mBinding.headingInvestmentAmount.text = "Principal Amount"
+                mBinding.headingEstReturn.text = "Total Interest Amount"
             }
             CalculatorType.CAR_LOAN.name -> {
                 mBinding.tvHeading.text = "Car Loan Calculator"
                 mBinding.etAmount.hint = "Car Loan Amount"
                 mBinding.sliderDuration.valueTo = 10.0F
+                mBinding.headingMonthlyEMI.visibility = View.VISIBLE
+                mBinding.tvMonthlyEmi.visibility = View.VISIBLE
+                mBinding.headingInvestmentAmount.text = "Principal Amount"
+                mBinding.headingEstReturn.text = "Total Interest Amount"
             }
             CalculatorType.HOME_LOAN.name -> {
                 mBinding.tvHeading.text = "Home Loan Calculator"
                 mBinding.etAmount.hint = "Home Loan Amount"
                 mBinding.sliderDuration.valueTo = 50.0F
+                mBinding.headingMonthlyEMI.visibility = View.VISIBLE
+                mBinding.tvMonthlyEmi.visibility = View.VISIBLE
+                mBinding.headingInvestmentAmount.text = "Principal Amount"
+                mBinding.headingEstReturn.text = "Total Interest Amount"
             }
             CalculatorType.EMI.name -> {
                 mBinding.tvHeading.text = "EMI Calculator"
                 mBinding.etAmount.hint = "Total Purchased Amount"
                 mBinding.sliderDuration.valueTo = 60.0F
+                mBinding.headingMonthlyEMI.visibility = View.VISIBLE
+                mBinding.tvMonthlyEmi.visibility = View.VISIBLE
+                mBinding.headingInvestmentAmount.visibility = View.GONE
+                mBinding.headingEstReturn.visibility = View.GONE
+                mBinding.headingTotalValue.visibility = View.GONE
+                mBinding.tvInvestedAmount.visibility = View.GONE
+                mBinding.tvEstReturns.visibility = View.GONE
+                mBinding.tvTotalValue.visibility = View.GONE
             }
             CalculatorType.RD.name -> {
                 mBinding.tvHeading.text = "RD Calculator"
@@ -121,9 +142,9 @@ class CalculatorFragment : BaseFragment() {
                 args.calculatorType == CalculatorType.RD.name ||
                 args.calculatorType == CalculatorType.EMI.name
             ) {
-                mBinding.tvTimePeriod.text = "${mInvestmentDuration}month"
+                mBinding.tvTimePeriod.text = "$mInvestmentDuration month"
             } else {
-                mBinding.tvTimePeriod.text = "${mInvestmentDuration}Yr"
+                mBinding.tvTimePeriod.text = "$mInvestmentDuration year"
             }
         }
 
@@ -166,15 +187,8 @@ class CalculatorFragment : BaseFragment() {
 
     private fun calculate() {
 
-        if (mBinding.etAmount.editText?.text.isNullOrEmpty()) {
-            mBinding.etAmount.error = "Please Enter Amount"
+        if (!validateFields())
             return
-        }
-
-        if (mBinding.etReturnRate.editText?.text.isNullOrEmpty()) {
-            mBinding.etReturnRate.error = "Please Enter Return Rate"
-            return
-        }
 
         mBinding.clResult.visibility = View.VISIBLE
 
@@ -229,6 +243,9 @@ class CalculatorFragment : BaseFragment() {
                         mRateOfReturn,
                     )
                 val finalAmount = (monthlyEMI * mInvestmentDuration * 12).toLong()
+                mBinding.tvMonthlyEmi.text = "" + getText(R.string.Rs) + "" + Utils.rupeeFormat(
+                    monthlyEMI.toLong().toString()
+                )
                 setResults(mInvestedAmount, finalAmount)
             }
             CalculatorType.EMI.name -> {
@@ -238,7 +255,10 @@ class CalculatorFragment : BaseFragment() {
                         mInvestmentDuration,
                         mRateOfReturn,
                     )
-                Toast.makeText(requireActivity(), "" + monthlyEMI, Toast.LENGTH_LONG).show()
+                mBinding.clResult.visibility = View.VISIBLE
+                mBinding.tvMonthlyEmi.text = "" + getText(R.string.Rs) + "" + Utils.rupeeFormat(
+                    monthlyEMI.toLong().toString()
+                )
             }
             CalculatorType.RD.name -> {
                 val interestEarned =
@@ -254,6 +274,29 @@ class CalculatorFragment : BaseFragment() {
         }
     }
 
+    private fun validateFields(): Boolean {
+        if (mBinding.etAmount.editText?.text.isNullOrEmpty()) {
+            mBinding.etAmount.error = "Please Enter Amount"
+            return false
+        }
+
+        if (mBinding.etAmount.editText?.text.toString().toLong() <= 0) {
+            mBinding.etAmount.error = "Please Enter Correct Amount"
+            return false
+        }
+
+        if (mBinding.etReturnRate.editText?.text.isNullOrEmpty()) {
+            mBinding.etReturnRate.error = "Please Enter Return Rate"
+            return false
+        }
+
+        if (mBinding.etReturnRate.editText?.text.toString().toFloat() <= 0) {
+            mBinding.etReturnRate.error = "Please Enter Correct Return Rate"
+            return false
+        }
+        return true
+    }
+
     private fun setResults(
         investedAmount: Long,
         finalAmount: Long
@@ -264,13 +307,23 @@ class CalculatorFragment : BaseFragment() {
             "" + getText(R.string.Rs) + "" + Utils.rupeeFormat(investedAmount.toString())
         mBinding.tvEstReturns.text =
             "" + getText(R.string.Rs) + "" + Utils.rupeeFormat((finalAmount - investedAmount).toString())
-        showChart(finalAmount - investedAmount, finalAmount)
+
+        if (CalculatorType.SIP.name == args.calculatorType ||
+            CalculatorType.LUMPSUM.name == args.calculatorType ||
+            CalculatorType.NSC.name == args.calculatorType ||
+            CalculatorType.RD.name == args.calculatorType ||
+            CalculatorType.FD.name == args.calculatorType ||
+            CalculatorType.PPF.name == args.calculatorType
+        ) {
+            showChart(finalAmount - investedAmount, finalAmount)
+        }
     }
 
     private fun showChart(
         interestAmount: Long,
         finalAmount: Long
     ) {
+        mBinding.chart.visibility = View.VISIBLE
         val pieEntries: ArrayList<PieEntry> = ArrayList()
         val label = ""
 
@@ -283,8 +336,8 @@ class CalculatorFragment : BaseFragment() {
 
         //initializing colors for the entries
         val colors: ArrayList<Int> = ArrayList()
-        colors.add(Color.parseColor("#304567"))
-        colors.add(Color.parseColor("#309967"))
+        colors.add(Color.parseColor("#48AC42"))
+        colors.add(Color.parseColor("#FF0970B5"))
 
         //input data and fit data into pie chart entry
         for (type in typeAmountMap.keys) {

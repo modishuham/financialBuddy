@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.shubham.financialbuddy.R
 import com.shubham.financialbuddy.base.BaseFragment
@@ -270,14 +271,15 @@ class GenerateRentReceiptFragment : BaseFragment() {
             pdfDocument.writeTo(FileOutputStream(file))
 
             // on below line we are displaying a toast message as PDF file generated..
-            Toast.makeText(requireActivity(), "PDF file generated..", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireActivity(), "Rent Receipt Generated..", Toast.LENGTH_SHORT).show()
+            findNavController().popBackStack()
         } catch (e: Exception) {
             // below line is used
             // to handle error
             e.printStackTrace()
 
             // on below line we are displaying a toast message as fail to generate PDF
-            Toast.makeText(requireActivity(), "Fail to generate PDF file..", Toast.LENGTH_SHORT)
+            Toast.makeText(requireActivity(), "Something Went Wrong..", Toast.LENGTH_SHORT)
                 .show()
         }
         // after storing our pdf to that

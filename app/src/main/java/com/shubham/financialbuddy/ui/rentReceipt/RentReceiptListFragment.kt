@@ -40,6 +40,8 @@ class RentReceiptListFragment : BaseFragment() {
         files?.let {
             if (it.isNotEmpty()) {
                 mBinding.rvRentReceipt.adapter = ReceiptListAdapter(it.toCollection(ArrayList()))
+            } else {
+                mBinding.lavNoData.visibility = View.VISIBLE
             }
         }
     }
