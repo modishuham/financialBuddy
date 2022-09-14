@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">FinancialBuddy</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_investment_plans">Investment Plans</string>
+    <string name="menu_more">More</string>
+    <string name="expected_return_rate_p_a">Expected return rate (p.a)</string>
+    <string name="time_period">Time period</string>
+    <string name="monthly_investment">Monthly investment</string>
+    <string name="calculate">Calculate</string>
+    <string name="Rs">\u20B9</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="calculator">Personal Finance Helper \n<![CDATA[& Calculator]]></string>
+    <string name="financialbuddy">FinancialBuddy</string>
+    <string name="share">Share</string>
+    <string name="delete">Delete</string>
+    <string name="all_financial_calculators">All Financial Calculators -</string>
+    <string name="see_all_calculators">See All Calculators</string>
+</resources>

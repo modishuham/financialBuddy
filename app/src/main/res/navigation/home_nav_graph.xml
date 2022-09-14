@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.shubham.financialbuddy.ui.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_calculatorFragment"
+            app:destination="@id/calculatorFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_seeAllFragment"
+            app:destination="@id/seeAllFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_rentReceiptListFragment"
+            app:destination="@id/rentReceiptListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_hraFragment"
+            app:destination="@id/hraFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calculatorFragment"
+        android:name="com.shubham.financialbuddy.ui.calculator.CalculatorFragment"
+        android:label="CalculatorFragment"
+        tools:layout="@layout/fragment_calculator">
+        <argument
+            android:name="calculatorType"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/seeAllFragment"
+        android:name="com.shubham.financialbuddy.ui.seeAll.SeeAllFragment"
+        android:label="SeeAllFragment"
+        tools:layout="@layout/fragment_see_all">
+        <action
+            android:id="@+id/action_seeAllFragment_to_calculatorFragment"
+            app:destination="@id/calculatorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rentReceiptListFragment"
+        android:name="com.shubham.financialbuddy.ui.rentReceipt.RentReceiptListFragment"
+        android:label="RentReceiptListFragment"
+        tools:layout="@layout/fragment_rent_receipt_list">
+        <action
+            android:id="@+id/action_rentReceiptListFragment_to_generateRentReceiptFragment"
+            app:destination="@id/generateRentReceiptFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/generateRentReceiptFragment"
+        android:name="com.shubham.financialbuddy.ui.rentReceipt.GenerateRentReceiptFragment"
+        android:label="GenerateRentReceiptFragment"
+        tools:layout="@layout/fragment_generate_rent_receipt" />
+    <fragment
+        android:id="@+id/hraFragment"
+        android:name="com.shubham.financialbuddy.ui.hra.HraFragment"
+        android:label="HraFragment"
+        tools:layout="@layout/fragment_hra" />
+</navigation>
