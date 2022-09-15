@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "36510620021",
+    "project_id": "financialbuddy-3aadf",
+    "storage_bucket": "financialbuddy-3aadf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:36510620021:android:49ba210f50d051d1029b3c",
+        "android_client_info": {
+          "package_name": "com.shubham.financialbuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "36510620021-ujc7a2oa651l7fom7bgjcpfkurgpma7t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7n9ZoP704wQEkNuqxArdgY497P4eD7kI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "36510620021-ujc7a2oa651l7fom7bgjcpfkurgpma7t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

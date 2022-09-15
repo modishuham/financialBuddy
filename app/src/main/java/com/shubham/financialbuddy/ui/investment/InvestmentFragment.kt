@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.shubham.financialbuddy.base.BaseFragment
 import com.shubham.financialbuddy.databinding.FragmentInvestmentBinding
+import com.shubham.financialbuddy.model.RemoteConfigData
 
 class InvestmentFragment : BaseFragment() {
 
@@ -95,10 +96,10 @@ class InvestmentFragment : BaseFragment() {
             "<p>The government has introduced many small saving schemes for people who want to invest in highly safe investment options. These schemes offer assured returns to investors with little volatility. But you earn lower returns than market-linked products like NPS, Mutual Funds, or stocks.<br><br>" +
                     "That said, small saving schemes typically beat inflation and FDs by a decent margin. Examples of small saving schemes for the long term include investment options like Public Provident Fund (PPF), Senior Citizens Savings Scheme (SCSS), the Sukanya Samriddhi Scheme, and the Kisan Vikas Patra.<br><br>" +
                     "The following shows some of the small saving schemes suitable for long-term investment and the returns you can earn from them<br><br>" +
-                    "<b><h4>Senior Citizen Savings Scheme (Interest rate 7.4%)</h4></b><br><br>" +
-                    "<b><h4>Public Provident Fund Scheme (Interest rate 7.1%)</h4></b><br><br>" +
-                    "<b><h4>Kisan Vikas Patra (Interest rate 6.9%)</h4></b><br><br>" +
-                    "<b><h4>Sukanya Samriddhi Account Scheme (Interest rate 7.6%)</h4></b></p>",
+                    "<b><h4>Senior Citizen Savings Scheme (Interest rate " + RemoteConfigData.scssInterest + "%)</h4></b><br><br>" +
+                    "<b><h4>Public Provident Fund Scheme (Interest rate " + RemoteConfigData.ppfInterest + "%)</h4></b><br><br>" +
+                    "<b><h4>Kisan Vikas Patra (Interest rate " + RemoteConfigData.kvpInterest + "%)</h4></b><br><br>" +
+                    "<b><h4>Sukanya Samriddhi Account Scheme (Interest rate " + RemoteConfigData.ssasInterest + "%)</h4></b></p>",
             "Low",
             "6.9-7.6%",
             false
@@ -135,7 +136,7 @@ class InvestmentFragment : BaseFragment() {
 
         val plan8 = InvestmentPlan(
             "Plan", "National Savings Certificates (NSC)",
-            "<p>National Savings Certificate or NSC is a post office savings product backed by the government of India. It works like a 5-year FD. So your deposits in NSC will mature in 5 years, and you will earn 6.8% annual interest. But the entire amount is payable only at maturity.<br><br>" +
+            "<p>National Savings Certificate or NSC is a post office savings product backed by the government of India. It works like a 5-year FD. So your deposits in NSC will mature in 5 years, and you will earn " + RemoteConfigData.nscInterest + "% annual interest. But the entire amount is payable only at maturity.<br><br>" +
                     "So, if you have a goal that is 5 years away, NSC is one of the safer investment options. But it comes with limitations like 5-year lock-in and subdued returns as compared to Debt Funds or Hybrid Funds.</p>",
             "Low",
             "6.8%",

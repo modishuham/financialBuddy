@@ -17,6 +17,7 @@ import com.github.mikephil.charting.data.PieEntry
 import com.shubham.financialbuddy.R
 import com.shubham.financialbuddy.base.BaseFragment
 import com.shubham.financialbuddy.databinding.FragmentCalculatorBinding
+import com.shubham.financialbuddy.model.RemoteConfigData
 import com.shubham.financialbuddy.utils.CalculationHelper
 import com.shubham.financialbuddy.utils.CalculatorType
 import com.shubham.financialbuddy.utils.Utils
@@ -67,7 +68,7 @@ class CalculatorFragment : BaseFragment() {
                 mBinding.etAmount.hint = "Total Investment"
                 mBinding.sliderDuration.value = 5.0F
                 mBinding.sliderDuration.isEnabled = false
-                mBinding.etReturnRate.editText?.setText("6.8")
+                mBinding.etReturnRate.editText?.setText(RemoteConfigData.nscInterest)
                 mBinding.etReturnRate.isEnabled = false
             }
             CalculatorType.PPF.name -> {
@@ -77,7 +78,7 @@ class CalculatorFragment : BaseFragment() {
                 mBinding.sliderDuration.valueFrom = 15.0F
                 mBinding.sliderDuration.stepSize = 5.0F
                 mBinding.tvTimePeriod.text = "15 year"
-                mBinding.etReturnRate.editText?.setText("7.1")
+                mBinding.etReturnRate.editText?.setText(RemoteConfigData.ppfInterest)
                 mBinding.etReturnRate.isEnabled = false
             }
             CalculatorType.FD.name -> {
@@ -85,11 +86,14 @@ class CalculatorFragment : BaseFragment() {
                 mBinding.etAmount.hint = "Total Investment"
                 mBinding.sliderDuration.value = 12.0F
                 mBinding.sliderDuration.valueTo = 120.0F
+                mBinding.etReturnRate.editText?.setText("5.0")
                 showCompoundingPeriod()
             }
             CalculatorType.PERSONAL_LOAN.name -> {
                 mBinding.tvHeading.text = "Home Loan Calculator"
                 mBinding.etAmount.hint = "Loan Amount"
+                mBinding.etReturnRate.hint = "Expected interest rate (p.a)"
+                mBinding.etReturnRate.editText?.setText("12.0")
                 mBinding.headingMonthlyEMI.visibility = View.VISIBLE
                 mBinding.tvMonthlyEmi.visibility = View.VISIBLE
                 mBinding.headingInvestmentAmount.text = "Principal Amount"
@@ -99,6 +103,8 @@ class CalculatorFragment : BaseFragment() {
                 mBinding.tvHeading.text = "Car Loan Calculator"
                 mBinding.etAmount.hint = "Car Loan Amount"
                 mBinding.sliderDuration.valueTo = 10.0F
+                mBinding.etReturnRate.hint = "Expected interest rate (p.a)"
+                mBinding.etReturnRate.editText?.setText("8.10")
                 mBinding.headingMonthlyEMI.visibility = View.VISIBLE
                 mBinding.tvMonthlyEmi.visibility = View.VISIBLE
                 mBinding.headingInvestmentAmount.text = "Principal Amount"
@@ -107,6 +113,8 @@ class CalculatorFragment : BaseFragment() {
             CalculatorType.HOME_LOAN.name -> {
                 mBinding.tvHeading.text = "Home Loan Calculator"
                 mBinding.etAmount.hint = "Home Loan Amount"
+                mBinding.etReturnRate.hint = "Expected interest rate (p.a)"
+                mBinding.etReturnRate.editText?.setText("8.10")
                 mBinding.sliderDuration.valueTo = 50.0F
                 mBinding.headingMonthlyEMI.visibility = View.VISIBLE
                 mBinding.tvMonthlyEmi.visibility = View.VISIBLE
@@ -116,6 +124,8 @@ class CalculatorFragment : BaseFragment() {
             CalculatorType.EMI.name -> {
                 mBinding.tvHeading.text = "EMI Calculator"
                 mBinding.etAmount.hint = "Total Purchased Amount"
+                mBinding.etReturnRate.hint = "Expected interest rate (p.a)"
+                mBinding.etReturnRate.editText?.setText("9.0")
                 mBinding.sliderDuration.valueTo = 60.0F
                 mBinding.headingMonthlyEMI.visibility = View.VISIBLE
                 mBinding.tvMonthlyEmi.visibility = View.VISIBLE
@@ -131,6 +141,7 @@ class CalculatorFragment : BaseFragment() {
                 mBinding.etAmount.hint = "Monthly Investment"
                 mBinding.sliderDuration.value = 12.0F
                 mBinding.sliderDuration.valueTo = 120.0F
+                mBinding.etReturnRate.editText?.setText("5.0")
                 showCompoundingPeriod()
             }
         }

@@ -28,6 +28,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/shubham/financialbuddy/model/RemoteConfigData.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/shubham/financialbuddy/model/RentReceiptData.kt">
           <value>
             <set />
