@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.shubham.financialbuddy.R
+import com.shubham.financialbuddy.analytics.AppAnalytics
 import com.shubham.financialbuddy.base.BaseFragment
 import com.shubham.financialbuddy.databinding.FragmentHomeBinding
 import com.shubham.financialbuddy.utils.CalculationHelper
@@ -27,6 +28,7 @@ class HomeFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        AppAnalytics.trackScreenLaunch("home_screen")
         mBinding.rvCalculator.addItemDecoration(
             GridSpaceItemDecoration(
                 Utils.convertDpToPixel(

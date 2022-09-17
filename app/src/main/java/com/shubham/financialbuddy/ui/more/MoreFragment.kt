@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.RadioButton
 import androidx.appcompat.app.AppCompatDelegate
 import com.shubham.financialbuddy.BuildConfig
+import com.shubham.financialbuddy.analytics.AppAnalytics
 import com.shubham.financialbuddy.base.BaseFragment
 import com.shubham.financialbuddy.databinding.FragmentMoreBinding
 import com.shubham.financialbuddy.storage.AppPref
@@ -31,6 +32,8 @@ class MoreFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        AppAnalytics.trackScreenLaunch("more_screen")
+
         mBinding.tvAppVersion.text = BuildConfig.VERSION_NAME
 
         val isDarkModeEnabled = AppPref.getBooleanDefaultTrue(SharedPrefConstants.DARK_MODE_ENABLED)
@@ -49,6 +52,7 @@ class MoreFragment : BaseFragment() {
                             .MODE_NIGHT_YES
                     )
                 AppPref.putBoolean(SharedPrefConstants.DARK_MODE_ENABLED, true)
+                AppAnalytics.trackDarkMode()
             } else {
                 AppCompatDelegate
                     .setDefaultNightMode(
@@ -56,6 +60,7 @@ class MoreFragment : BaseFragment() {
                             .MODE_NIGHT_NO
                     )
                 AppPref.putBoolean(SharedPrefConstants.DARK_MODE_ENABLED, false)
+                AppAnalytics.trackLightMode()
             }
         }
 
@@ -68,6 +73,7 @@ class MoreFragment : BaseFragment() {
             )
             sendIntent.type = "text/plain"
             startActivity(sendIntent)
+            AppAnalytics.trackShareApp()
         }
 
         mBinding.tvRateUs.setOnClickListener {
@@ -78,6 +84,7 @@ class MoreFragment : BaseFragment() {
                         Uri.parse("market://details?id=" + BuildConfig.APPLICATION_ID)
                     )
                 )
+                AppAnalytics.trackRateUSClick()
             } catch (e: ActivityNotFoundException) {
                 startActivity(
                     Intent(
@@ -88,6 +95,14 @@ class MoreFragment : BaseFragment() {
             }
         }
 
+        mBinding.tvPrivacyPolicy.setOnClickListener {
+            AppAnalytics.trackPolicyClick()
+        }
+
+        mBinding.tvTerms.setOnClickListener {
+            AppAnalytics.trackTermsClick()
+        }
+
         mBinding.tvCamMaster.setOnClickListener {
             try {
                 startActivity(
@@ -96,6 +111,7 @@ class MoreFragment : BaseFragment() {
                         Uri.parse("market://details?id=com.m.cammstrind")
                     )
                 )
+                AppAnalytics.trackCamMasterClick()
             } catch (e: ActivityNotFoundException) {
                 startActivity(
                     Intent(

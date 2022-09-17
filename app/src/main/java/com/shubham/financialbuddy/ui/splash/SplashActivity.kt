@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings
 import com.shubham.financialbuddy.R
+import com.shubham.financialbuddy.analytics.AppAnalytics
 import com.shubham.financialbuddy.databinding.ActivitySplashBinding
 import com.shubham.financialbuddy.model.RemoteConfigData
 import com.shubham.financialbuddy.ui.MainActivity
@@ -24,6 +25,9 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        AppAnalytics.trackAppOpen()
+        AppAnalytics.trackScreenLaunch("Splash_screen")
 
         handler = Handler(Looper.getMainLooper())
         animationHandler = Handler(Looper.getMainLooper())

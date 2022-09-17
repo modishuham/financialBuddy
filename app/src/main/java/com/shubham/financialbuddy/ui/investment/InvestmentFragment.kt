@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.shubham.financialbuddy.analytics.AppAnalytics
 import com.shubham.financialbuddy.base.BaseFragment
 import com.shubham.financialbuddy.databinding.FragmentInvestmentBinding
 import com.shubham.financialbuddy.model.RemoteConfigData
@@ -23,6 +24,8 @@ class InvestmentFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        AppAnalytics.trackScreenLaunch("investment_screen")
 
         mBinding.rvInvestmentPlans.adapter = InvestmentPlanAdapter(getInvestmentPlans())
 

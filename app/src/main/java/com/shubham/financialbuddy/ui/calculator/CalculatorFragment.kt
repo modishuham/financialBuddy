@@ -15,6 +15,7 @@ import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.shubham.financialbuddy.R
+import com.shubham.financialbuddy.analytics.AppAnalytics
 import com.shubham.financialbuddy.base.BaseFragment
 import com.shubham.financialbuddy.databinding.FragmentCalculatorBinding
 import com.shubham.financialbuddy.model.RemoteConfigData
@@ -43,6 +44,8 @@ class CalculatorFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        AppAnalytics.trackScreenLaunch("calculator_screen")
 
         mBinding.etAmount.editText?.setText(mInvestedAmount.toString())
         mBinding.etReturnRate.editText?.setText(mRateOfReturn.toString())

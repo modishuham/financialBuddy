@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.shubham.financialbuddy.R
+import com.shubham.financialbuddy.analytics.AppAnalytics
 import com.shubham.financialbuddy.ui.home.Calculator
 
 class SeeAllAdapter(private val calculatorList: ArrayList<Calculator>) :
@@ -26,6 +27,7 @@ class SeeAllAdapter(private val calculatorList: ArrayList<Calculator>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.name.text = calculatorList[position].name
         holder.itemView.setOnClickListener {
+            AppAnalytics.trackCalculatorOpen(calculatorList[position].name)
             val action =
                 SeeAllFragmentDirections.actionSeeAllFragmentToCalculatorFragment(calculatorList[position].type)
             it.findNavController().navigate(action)

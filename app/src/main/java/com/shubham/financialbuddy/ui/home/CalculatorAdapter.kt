@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.shubham.financialbuddy.analytics.AppAnalytics
 import com.shubham.financialbuddy.databinding.ItemCalculatorBinding
 import com.shubham.financialbuddy.databinding.ItemSeeAllBinding
 
@@ -30,6 +31,7 @@ class CalculatorAdapter(private val calculatorList: ArrayList<Calculator>) :
         private val binding = itemView
         fun bind(calculator: Calculator) {
             binding.root.setOnClickListener {
+                AppAnalytics.trackCalculatorOpen(calculator.name)
                 val action =
                     HomeFragmentDirections.actionHomeFragmentToSeeAllFragment()
                 it.findNavController().navigate(action)

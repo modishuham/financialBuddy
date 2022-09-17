@@ -14,6 +14,7 @@ import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.shubham.financialbuddy.R
+import com.shubham.financialbuddy.analytics.AppAnalytics
 import com.shubham.financialbuddy.base.BaseFragment
 import com.shubham.financialbuddy.databinding.FragmentHraBinding
 import com.shubham.financialbuddy.utils.Utils
@@ -48,6 +49,9 @@ class HraFragment : BaseFragment() {
             if (!validateFields())
                 return@setOnClickListener
 
+            AppAnalytics.trackCalculateHRA()
+            AppAnalytics.trackScreenLaunch("HRA_screen")
+
             mBinding.clResult.visibility = View.VISIBLE
 
             val hraExempted = calculateHRA()
@@ -64,6 +68,7 @@ class HraFragment : BaseFragment() {
         mBinding.etBasicSalary.editText?.error = null
         mBinding.etHraReceived.editText?.error = null
         mBinding.etRentPaid.editText?.error = null
+        mBinding.etDearnessAllowance.editText?.error = null
 
         if (mBinding.etBasicSalary.editText?.text.isNullOrEmpty()) {
             mBinding.etBasicSalary.editText?.error = "Please Enter Basic Salary"
@@ -77,6 +82,11 @@ class HraFragment : BaseFragment() {
 
         if (mBinding.etRentPaid.editText?.text.isNullOrEmpty()) {
             mBinding.etRentPaid.editText?.error = "Please Enter Rent"
+            return false
+        }
+
+        if (mBinding.etDearnessAllowance.editText?.text.isNullOrEmpty()) {
+            mBinding.etDearnessAllowance.editText?.error = "Please Enter Dearness Allowance"
             return false
         }
         return true

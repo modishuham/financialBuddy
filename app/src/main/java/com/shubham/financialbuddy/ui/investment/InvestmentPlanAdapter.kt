@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.shubham.financialbuddy.R
+import com.shubham.financialbuddy.analytics.AppAnalytics
 import com.shubham.financialbuddy.databinding.ItemInvestmentPlanBinding
 import com.shubham.financialbuddy.databinding.ItemInvestmentPlanTitleBinding
 
@@ -36,6 +37,7 @@ class InvestmentPlanAdapter(private val plansList: ArrayList<InvestmentPlan>) :
                     binding.tvInvestmentPlanDescription.visibility = View.VISIBLE
                     binding.ivExpand.setImageResource(R.drawable.ic_arrow_up)
                     plan.isExpanded = true
+                    AppAnalytics.trackInvestmentPlanView(plan.planName)
                 } else {
                     binding.tvInvestmentPlanDescription.visibility = View.GONE
                     binding.ivExpand.setImageResource(R.drawable.ic_arrow_down)

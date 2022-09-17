@@ -1,13 +1,14 @@
 package com.shubham.financialbuddy.utils
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.provider.Settings
 import android.util.DisplayMetrics
 import android.util.Log
 import com.shubham.financialbuddy.model.RentReceiptData
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 object Utils {
@@ -110,5 +111,13 @@ object Utils {
     fun convertDateToMonthFormat(date: String): String {
         val splitList = date.split(" ")
         return splitList[1] + "-" + splitList[2]
+    }
+
+    @SuppressLint("HardwareIds")
+    fun getDeviceID(context: Context): String {
+        return Settings.Secure.getString(
+            context.contentResolver,
+            Settings.Secure.ANDROID_ID
+        )
     }
 }

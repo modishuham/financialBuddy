@@ -12,6 +12,7 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.shubham.financialbuddy.R
+import com.shubham.financialbuddy.analytics.AppAnalytics
 import com.shubham.financialbuddy.base.BaseFragment
 import com.shubham.financialbuddy.databinding.FragmentGenerateRentReceiptBinding
 import com.shubham.financialbuddy.model.RentReceiptData
@@ -35,8 +36,12 @@ class GenerateRentReceiptFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        AppAnalytics.trackScreenLaunch("generate_rent_screen")
+
         mBinding.btnGenerate.setOnClickListener {
             if (validateInformation()) {
+                AppAnalytics.trackGenerateRent()
                 generateRentReceipt()
             }
         }

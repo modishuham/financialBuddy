@@ -18,6 +18,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/shubham/financialbuddy/analytics/AppAnalytics.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/shubham/financialbuddy/base/BaseApplication.kt">
           <value>
             <set />
@@ -149,6 +154,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/shubham/financialbuddy/ui/splash/SplashActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/shubham/financialbuddy/utils/AppConstants.kt">
           <value>
             <set />
           </value>

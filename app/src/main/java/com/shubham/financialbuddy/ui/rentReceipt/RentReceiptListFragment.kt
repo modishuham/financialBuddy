@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.shubham.financialbuddy.R
+import com.shubham.financialbuddy.analytics.AppAnalytics
 import com.shubham.financialbuddy.base.BaseFragment
 import com.shubham.financialbuddy.databinding.FragmentRentReceiptListBinding
 import java.io.File
@@ -25,6 +26,9 @@ class RentReceiptListFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        AppAnalytics.trackScreenLaunch("rent_receipt_list_screen")
+
         mBinding.btnGenerateRentReceipt.setOnClickListener {
             findNavController().navigate(R.id.action_rentReceiptListFragment_to_generateRentReceiptFragment)
         }
