@@ -65,4 +65,6 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-crashlytics'
     implementation 'com.google.firebase:firebase-config'
+    //Chrome custom tab
+    implementation 'androidx.browser:browser:1.4.0'
 }

@@ -126,27 +126,117 @@ object CalculationHelper {
 
     fun getHomeCalculators(): ArrayList<Calculator> {
         val calculators: ArrayList<Calculator> = ArrayList()
-        calculators.add(Calculator("SIP Calculator", CalculatorType.SIP.name))
-        calculators.add(Calculator("Lumpsum Calculator", CalculatorType.LUMPSUM.name))
-        calculators.add(Calculator("NSC Calculator", CalculatorType.NSC.name))
-        calculators.add(Calculator("PPF Calculator", CalculatorType.PPF.name))
-        calculators.add(Calculator("FD Calculator", CalculatorType.FD.name))
-        calculators.add(Calculator("SEE_ALL", CalculatorType.SEEALL.name))
+        calculators.add(
+            Calculator(
+                "SIP Calculator",
+                CalculatorType.SIP.name,
+                "Calculate Systematic Investment Plan"
+            )
+        )
+        calculators.add(
+            Calculator(
+                "Lumpsum Calculator",
+                CalculatorType.LUMPSUM.name,
+                "Calculate Lumpsum Investment"
+            )
+        )
+        calculators.add(
+            Calculator(
+                "NSC Calculator",
+                CalculatorType.NSC.name,
+                "Calculate National Savings Certificates"
+            )
+        )
+        calculators.add(
+            Calculator(
+                "PPF Calculator",
+                CalculatorType.PPF.name,
+                "Calculate Public Provident Fund"
+            )
+        )
+        calculators.add(
+            Calculator(
+                "FD Calculator",
+                CalculatorType.FD.name,
+                "Calculate Fixed Deposit"
+            )
+        )
+        calculators.add(Calculator("SEE_ALL", CalculatorType.SEEALL.name, ""))
         return calculators
     }
 
     fun getAllCalculators(): ArrayList<Calculator> {
         val calculators: ArrayList<Calculator> = ArrayList()
-        calculators.add(Calculator("SIP Calculator", CalculatorType.SIP.name))
-        calculators.add(Calculator("Lumpsum Calculator", CalculatorType.LUMPSUM.name))
-        calculators.add(Calculator("NSC Calculator", CalculatorType.NSC.name))
-        calculators.add(Calculator("PPF Calculator", CalculatorType.PPF.name))
-        calculators.add(Calculator("FD Calculator", CalculatorType.FD.name))
-        calculators.add(Calculator("RD Calculator", CalculatorType.RD.name))
-        calculators.add(Calculator("EMI Calculator", CalculatorType.EMI.name))
-        calculators.add(Calculator("Home Loan Calculator", CalculatorType.HOME_LOAN.name))
-        calculators.add(Calculator("Car Loan Calculator", CalculatorType.CAR_LOAN.name))
-        calculators.add(Calculator("Personal Loan Calculator", CalculatorType.PERSONAL_LOAN.name))
+        calculators.add(
+            Calculator(
+                "SIP Calculator",
+                CalculatorType.SIP.name,
+                "Calculate Systematic Investment Plan"
+            )
+        )
+        calculators.add(
+            Calculator(
+                "Lumpsum Calculator",
+                CalculatorType.LUMPSUM.name,
+                "Calculate Lumpsum Investment"
+            )
+        )
+        calculators.add(
+            Calculator(
+                "NSC Calculator",
+                CalculatorType.NSC.name,
+                "Calculate National Savings Certificates"
+            )
+        )
+        calculators.add(
+            Calculator(
+                "PPF Calculator",
+                CalculatorType.PPF.name,
+                "Calculate Public Provident Fund"
+            )
+        )
+        calculators.add(
+            Calculator(
+                "FD Calculator",
+                CalculatorType.FD.name,
+                "Calculate Fixed Deposit"
+            )
+        )
+        calculators.add(
+            Calculator(
+                "RD Calculator",
+                CalculatorType.RD.name,
+                "Calculate Recurring Deposit"
+            )
+        )
+        calculators.add(
+            Calculator(
+                "EMI Calculator",
+                CalculatorType.EMI.name,
+                "Calculate Equated Monthly Instalment"
+            )
+        )
+        calculators.add(
+            Calculator(
+                "Home Loan Calculator",
+                CalculatorType.HOME_LOAN.name,
+                "Calculate Home Loan Interest"
+            )
+        )
+        calculators.add(
+            Calculator(
+                "Car Loan Calculator",
+                CalculatorType.CAR_LOAN.name,
+                "Calculate Car Loan Interest"
+            )
+        )
+        calculators.add(
+            Calculator(
+                "Personal Loan Calculator",
+                CalculatorType.PERSONAL_LOAN.name,
+                "Calculate Personal Loan Interest"
+            )
+        )
         return calculators
     }
 }

@@ -15,6 +15,7 @@ class SeeAllAdapter(private val calculatorList: ArrayList<Calculator>) :
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name: TextView = itemView.findViewById(R.id.tv_calculator_name)
+        val description: TextView = itemView.findViewById(R.id.tv_calculator_desc)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -26,6 +27,7 @@ class SeeAllAdapter(private val calculatorList: ArrayList<Calculator>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.name.text = calculatorList[position].name
+        holder.description.text = calculatorList[position].description
         holder.itemView.setOnClickListener {
             AppAnalytics.trackCalculatorOpen(calculatorList[position].name)
             val action =

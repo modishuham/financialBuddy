@@ -9,12 +9,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.browser.customtabs.CustomTabColorSchemeParams
+import androidx.browser.customtabs.CustomTabsIntent
+import androidx.core.content.ContextCompat
 import com.shubham.financialbuddy.BuildConfig
+import com.shubham.financialbuddy.R
 import com.shubham.financialbuddy.analytics.AppAnalytics
 import com.shubham.financialbuddy.base.BaseFragment
 import com.shubham.financialbuddy.databinding.FragmentMoreBinding
 import com.shubham.financialbuddy.storage.AppPref
 import com.shubham.financialbuddy.storage.SharedPrefConstants
+
 
 class MoreFragment : BaseFragment() {
 
@@ -97,10 +102,70 @@ class MoreFragment : BaseFragment() {
 
         mBinding.tvPrivacyPolicy.setOnClickListener {
             AppAnalytics.trackPolicyClick()
+            try {
+                val policyUrl = "https://financialbuddy.000webhostapp.com/policy.html"
+                val uri = Uri.parse(policyUrl)
+                val intentBuilder = CustomTabsIntent.Builder()
+                val params = CustomTabColorSchemeParams.Builder()
+                    .setNavigationBarColor(
+                        ContextCompat.getColor(
+                            requireActivity(),
+                            R.color.appBackgroundColor
+                        )
+                    )
+                    .setToolbarColor(
+                        ContextCompat.getColor(
+                            requireActivity(),
+                            R.color.appBackgroundColor
+                        )
+                    )
+                    .setSecondaryToolbarColor(
+                        ContextCompat.getColor(
+                            requireActivity(),
+                            R.color.appBackgroundColor
+                        )
+                    )
+                    .build()
+                intentBuilder.setColorSchemeParams(CustomTabsIntent.COLOR_SCHEME_DARK, params)
+                val customTabsIntent = intentBuilder.build()
+                customTabsIntent.launchUrl(requireActivity(), uri)
+            } catch (ex: Exception) {
+
+            }
         }
 
         mBinding.tvTerms.setOnClickListener {
             AppAnalytics.trackTermsClick()
+            try {
+                val termsUrl = "https://financialbuddy.000webhostapp.com/terms.html"
+                val uri = Uri.parse(termsUrl)
+                val intentBuilder = CustomTabsIntent.Builder()
+                val params = CustomTabColorSchemeParams.Builder()
+                    .setNavigationBarColor(
+                        ContextCompat.getColor(
+                            requireActivity(),
+                            R.color.appBackgroundColor
+                        )
+                    )
+                    .setToolbarColor(
+                        ContextCompat.getColor(
+                            requireActivity(),
+                            R.color.appBackgroundColor
+                        )
+                    )
+                    .setSecondaryToolbarColor(
+                        ContextCompat.getColor(
+                            requireActivity(),
+                            R.color.appBackgroundColor
+                        )
+                    )
+                    .build()
+                intentBuilder.setColorSchemeParams(CustomTabsIntent.COLOR_SCHEME_DARK, params)
+                val customTabsIntent = intentBuilder.build()
+                customTabsIntent.launchUrl(requireActivity(), uri)
+            } catch (ex: Exception) {
+
+            }
         }
 
         mBinding.tvCamMaster.setOnClickListener {

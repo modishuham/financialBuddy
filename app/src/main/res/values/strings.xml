@@ -55,4 +55,7 @@
     <string name="terms_and_conditions">Terms and Conditions</string>
     <string name="more_apps">More Apps</string>
     <string name="cammaster">CamMaster</string>
+    <string name="tools">Tools</string>
+    <string name="generate_rent_receipt">Generate Rent\nReceipt</string>
+    <string name="calculate_hra">Calculate HRA</string>
 </resources>

@@ -90,7 +90,7 @@
                     android:id="@+id/tv_rate_us"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
+                    android:layout_marginStart="8dp"
                     android:fontFamily="@font/roboto"
                     android:text="@string/rate_financialbuddy"
                     android:textColor="@color/textColor"
@@ -112,7 +112,7 @@
                     android:id="@+id/tv_share_app"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
+                    android:layout_marginStart="8dp"
                     android:fontFamily="@font/roboto"
                     android:text="@string/share_financialbuddy"
                     android:textColor="@color/textColor"
@@ -128,13 +128,13 @@
                     android:layout_marginTop="14dp"
                     app:layout_constraintStart_toStartOf="@id/gl_start"
                     app:layout_constraintTop_toBottomOf="@id/iv_share_app"
-                    app:srcCompat="@drawable/ic_more" />
+                    app:srcCompat="@drawable/ic_policy_terms" />
 
                 <TextView
                     android:id="@+id/tv_privacy_policy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
+                    android:layout_marginStart="8dp"
                     android:fontFamily="@font/roboto"
                     android:text="@string/privacy_policy"
                     android:textColor="@color/textColor"
@@ -150,13 +150,13 @@
                     android:layout_marginTop="14dp"
                     app:layout_constraintStart_toStartOf="@id/gl_start"
                     app:layout_constraintTop_toBottomOf="@id/iv_privacy_policy"
-                    app:srcCompat="@drawable/ic_more" />
+                    app:srcCompat="@drawable/ic_policy_terms" />
 
                 <TextView
                     android:id="@+id/tv_terms"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
+                    android:layout_marginStart="8dp"
                     android:fontFamily="@font/roboto"
                     android:text="@string/terms_and_conditions"
                     android:textColor="@color/textColor"

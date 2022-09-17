@@ -13,6 +13,7 @@
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
+        app:cardBackgroundColor="@color/transparent"
         android:layout_height="wrap_content"
         app:cardElevation="10dp">
 
