@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.widget.addTextChangedListener
 import com.github.mikephil.charting.data.PieData
@@ -163,7 +162,6 @@ class HraFragment : BaseFragment() {
         mBinding.chart.description.isEnabled = false
         mBinding.chart.setHoleColor(Color.TRANSPARENT)
         mBinding.chart.transparentCircleRadius = 0F
-        Toast.makeText(requireActivity(), "" + mBinding.chart.centerText, Toast.LENGTH_SHORT).show()
         mBinding.chart.data = pieData
         mBinding.chart.invalidate()
     }

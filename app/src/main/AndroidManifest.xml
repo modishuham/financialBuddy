@@ -10,9 +10,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/app_logo_circle"
+        android:icon="@drawable/app_logo_square"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/app_logo_circle"
         android:supportsRtl="true"
         android:theme="@style/Theme.FinancialBuddy"
         tools:targetApi="31">
@@ -32,12 +32,17 @@
         <activity
             android:name=".ui.MainActivity"
             android:exported="false"
+            android:hardwareAccelerated="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-2817695361365659~2833294002" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

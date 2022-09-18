@@ -3,8 +3,10 @@ package com.shubham.financialbuddy.base
 import android.app.Application
 import android.content.Context
 import androidx.appcompat.app.AppCompatDelegate
+import com.google.android.gms.ads.MobileAds
 import com.shubham.financialbuddy.storage.AppPref
 import com.shubham.financialbuddy.storage.SharedPrefConstants
+
 
 class BaseApplication : Application() {
 
@@ -22,6 +24,11 @@ class BaseApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
+        MobileAds.initialize(
+            this
+        ) { }
+
         checkDarkMode()
     }
 

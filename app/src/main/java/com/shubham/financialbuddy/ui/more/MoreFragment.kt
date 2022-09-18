@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.browser.customtabs.CustomTabColorSchemeParams
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.core.content.ContextCompat
+import com.google.android.gms.ads.AdRequest
 import com.shubham.financialbuddy.BuildConfig
 import com.shubham.financialbuddy.R
 import com.shubham.financialbuddy.analytics.AppAnalytics
@@ -38,6 +39,9 @@ class MoreFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         AppAnalytics.trackScreenLaunch("more_screen")
+
+        val adRequest: AdRequest = AdRequest.Builder().build()
+        mBinding.adViewMore.loadAd(adRequest)
 
         mBinding.tvAppVersion.text = BuildConfig.VERSION_NAME
 

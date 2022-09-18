@@ -5,10 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.google.android.gms.ads.AdRequest
+import com.shubham.financialbuddy.BuildConfig
 import com.shubham.financialbuddy.R
 import com.shubham.financialbuddy.analytics.AppAnalytics
 import com.shubham.financialbuddy.base.BaseFragment
 import com.shubham.financialbuddy.databinding.FragmentHomeBinding
+import com.shubham.financialbuddy.utils.AddMobConstants
 import com.shubham.financialbuddy.utils.CalculationHelper
 import com.shubham.financialbuddy.utils.GridSpaceItemDecoration
 import com.shubham.financialbuddy.utils.Utils
@@ -29,6 +32,10 @@ class HomeFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         AppAnalytics.trackScreenLaunch("home_screen")
+
+        val adRequest: AdRequest = AdRequest.Builder().build()
+        mBinding.adViewHome.loadAd(adRequest)
+
         mBinding.rvCalculator.addItemDecoration(
             GridSpaceItemDecoration(
                 Utils.convertDpToPixel(
